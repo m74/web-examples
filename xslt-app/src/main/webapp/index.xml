@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ks3.1.xsl"?>
+
+<blank layout="portrait">
+  <document date="20150630" taxPercent="18" taxSum="14117.16" sum="92545.8" outNumber="1" number="1">
+    <description>Выполнение услуг по Соглашению №1 от 16.04.14 к договору № 0109-13-05 от 01.09.13. Ответственное хранение летних веранд период с 16.04.14 по 30.06.14</description>
+    <comments/>
+    <contract number="согл-е 1 к дог хран 0109-13-05" signAt="2014-04-16"/>
+    <sender id="506" legalTitle="ООО &quot;Спец-сервис Москва&quot;" longLegalTitle="Общество с ограниченной Ответственностью &quot;Спец-сервис Москва&quot;" director="Чехлов Андрей Викторович" directorPost="Генеральный директор" accounter="Чехлов Андрей Викторович" vLice="Генерального директора Чехлова А.В." naOsnovanii="Устава">
+      <property name="legalAddress">119192, Москва, Мичуринский пр-т 34, 522</property>
+      <property name="inn">7729742148</property>
+      <property name="kpp">772901001</property>
+      <property name="ogrn">1137746464140</property>
+      <property name="okpo">17640689</property>
+      <property name="oktmo">46454654!!!!</property>
+      <property name="okato">45268584000</property>
+      <property name="rs">40702810102830000351</property>
+      <property name="ks">30101810200000000593</property>
+      <property name="bank">ОАО "АЛЬФА-БАНК"</property>
+      <property name="bik">044525593</property>
+      <property name="phone">+7(495) 2259556</property>
+    </sender>
+    <sender>
+      <taxSystem id="standart"/>
+    </sender>
+    <recipier id="15" legalTitle="ООО &quot;Галерея-АЛЕКС&quot;" longLegalTitle="Общество с ограниченной Ответственностью &quot;Галерея-АЛЕКС&quot;" director="Шестерина Тамара Михайловна" directorPost="Генеральный директор" accounter="Бакланова Лариса Ивановна" vLice="генерального директора Шестериной Т.М." naOsnovanii="устава">
+      <property name="legalAddress">119002, г. Москва, ул.Арбат, д.44, стр.1</property>
+      <property name="inn">7704520601</property>
+      <property name="kpp">770401001</property>
+      <property name="ogrn">1047796357179</property>
+      <property name="okpo">73485637</property>
+      <property name="okato">55.30</property>
+      <property name="rs">40702810922000022920</property>
+      <property name="ks">30101810500000000976</property>
+      <property name="bank">АКБ "Абсолют Банк" (ЗАО)</property>
+      <property name="bik">044525976</property>
+      <property name="phone">+7 (495) 916-56-16</property>
+      <consignee>ООО "Галерея-АЛЕКС"</consignee>
+    </recipier>
+    <item text="Выполнение услуг по Соглашению №1 от 16.04.14 к договору № 0109-13-05 от 01.09.13. Ответственное хранение летних веранд период с 16.04.14 по 30.06.14" count="1" price="92545.8" taxPercent="18" costTax="14117.16" cost="92545.8">
+      <nomenclature/>
+    </item>
+    <item text="Выполнение услуг по Соглашению №1 от 16.04.14 к договору № 0109-13-05 от 01.09.13. Ответственное хранение летних веранд период с 16.04.14 по 30.06.14" count="1" price="92545.8" taxPercent="18" costTax="14117.16" cost="92545.8">
+      <nomenclature/>
+    </item>
+  </document>
+  <remoteUser name="Смирнов Максим (Программист)" phone="8 (963) 606-40-90" email="mixam@h4y.ru"/>
+</blank>
