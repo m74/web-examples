@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="epd.xsl"?>
+
+<blank layout="landscape" printAt="2016-07-15 12:06:24.012" date="20160701" contextPath="">
+    <param name="style" value="xsl/documents/epd.xsl"/>
+    <param name="id" value="8"/>
+    <param name="stamp" value="false"/>
+    <param name="currency" value="rur"/>
+    <param name="company" value="2"/>
+    <sender id="2">
+        <longLegalTitle>Общество с ограниченной Ответственностью "ВладПласт"</longLegalTitle>
+        <inn>3328013479</inn>
+        <kpp>332801001</kpp>
+        <legalTitle>ООО "ВладПласт"</legalTitle>
+        <consignee>ООО "ВладПласт"</consignee>
+        <taxSystem/>
+    </sender>
+    <recipier id="1">
+        <legalTitle>Рога и Копыта</legalTitle>
+        <consignee>Рога и Копыта</consignee>
+    </recipier>
+    <number>1</number>
+    <date>2016-07-01</date>
+    <currency legalTitle="Российский рубль" code="643"/>
+    <document sum="1110" taxPercent="18" taxSum="169.32" number="1" date="2016-07-01">
+        <sender>
+            <id>2</id>
+            <longLegalTitle>Общество с ограниченной Ответственностью "ВладПласт"</longLegalTitle>
+            <inn>3328013479</inn>
+            <kpp>332801001</kpp>
+            <legalTitle>ООО "ВладПласт"</legalTitle>
+            <consignee>ООО "ВладПласт"</consignee>
+            <taxSystem/>
+        </sender>
+        <recipier>
+            <id>1</id>
+            <longLegalTitle>Рога и Копыта</longLegalTitle>
+            <legalTitle>Рога и Копыта</legalTitle>
+            <consignee>Рога и Копыта</consignee>
+            <taxSystem/>
+        </recipier>
+        <currency legalTitle="Российский рубль" code="643"/>
+    </document>
+    <item text="asdasdas e123123123 d d " count="1" price="1110" cost="1110" costTax="169.32" taxPercent="18">
+        <unit title="бэг"/>
+    </item>
+    <summary sum="1110" taxPercent="18" taxSum="169.32"/>
+</blank>
