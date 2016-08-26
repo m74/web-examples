@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="epd.xsl"?>
 
-<blank layout="landscape" printAt="2016-07-15 12:06:24.012" date="20160701" contextPath="">
+<blank layout="landscape" printAt="2016-08-25 23:45:38.224" date="20160701" contextPath="">
     <param name="style" value="xsl/documents/epd.xsl"/>
     <param name="id" value="8"/>
     <param name="stamp" value="false"/>
@@ -9,40 +9,62 @@
     <param name="company" value="2"/>
     <sender id="2">
         <longLegalTitle>Общество с ограниченной Ответственностью "ВладПласт"</longLegalTitle>
+        <legalAddress>Юридический адрес</legalAddress>
         <inn>3328013479</inn>
         <kpp>332801001</kpp>
+        <director>Пупкин Василий Петрович</director>
+        <accounter>Пупкин Василий Петрович</accounter>
         <legalTitle>ООО "ВладПласт"</legalTitle>
+        <postAddress>Почтовый адрес</postAddress>
+        <phone>телефон</phone>
         <consignee>ООО "ВладПласт"</consignee>
         <taxSystem/>
     </sender>
     <recipier id="1">
         <legalTitle>Рога и Копыта</legalTitle>
+        <legalAddress>адрес</legalAddress>
+        <inn>222222</inn>
+        <kpp>222201001</kpp>
         <consignee>Рога и Копыта</consignee>
+        <director>директор</director>
     </recipier>
     <number>1</number>
     <date>2016-07-01</date>
     <currency legalTitle="Российский рубль" code="643"/>
-    <document sum="1110" taxPercent="18" taxSum="169.32" number="1" date="2016-07-01">
+    <document sum="2220" taxPercent="18" taxSum="338.64" number="1" date="2016-07-01">
         <sender>
             <id>2</id>
             <longLegalTitle>Общество с ограниченной Ответственностью "ВладПласт"</longLegalTitle>
+            <legalAddress>Юридический адрес</legalAddress>
             <inn>3328013479</inn>
             <kpp>332801001</kpp>
+            <director>Пупкин Василий Петрович</director>
+            <accounter>Пупкин Василий Петрович</accounter>
             <legalTitle>ООО "ВладПласт"</legalTitle>
+            <postAddress>Почтовый адрес</postAddress>
+            <phone>телефон</phone>
             <consignee>ООО "ВладПласт"</consignee>
             <taxSystem/>
         </sender>
         <recipier>
             <id>1</id>
             <longLegalTitle>Рога и Копыта</longLegalTitle>
+            <legalAddress>адрес</legalAddress>
+            <inn>222222</inn>
+            <kpp>222201001</kpp>
+            <director>директор</director>
+            <accounter>директор</accounter>
             <legalTitle>Рога и Копыта</legalTitle>
+            <postAddress>попчта</postAddress>
+            <phone>тел</phone>
             <consignee>Рога и Копыта</consignee>
             <taxSystem/>
         </recipier>
         <currency legalTitle="Российский рубль" code="643"/>
     </document>
-    <item text="asdasdas e123123123 d d " count="1" price="1110" cost="1110" costTax="169.32" taxPercent="18">
-        <unit title="бэг"/>
+    <item text="asdasdas e123123123 d d " count="2" price="1110" cost="2220" costTax="338.64" taxPercent="18">
+        <unit code="2" title="упаковка"/>
     </item>
-    <summary sum="1110" taxPercent="18" taxSum="169.32"/>
+    <summary sum="2220" taxPercent="18" taxSum="338.64"/>
+    <style>/* /css/borders.css */ /* TABLE.BORDER */ table.border { border-collapse: collapse; } table.border td, table.border th { padding: 4px 8px; border: 1px solid #000; } table.border th, table.border .header td { background-color: #eee; } #blank table.border .footer td { font-weight: bold; } table.border .noborder, table.border .noborder td { border: none; } .border .bordertop { border-top: 1px solid #000; } .border .borderbottom { border-bottom: 1px solid #000; } .border .borderleft { border-left: 1px solid #000; } .border .borderright { border-right: 1px solid #000; } .border .doubleborder { border: 2px solid #000; } .border .doublebordertop { border-top: 2px solid #000; } .border .doubleborderbottom { border-bottom: 2px solid #000; } .border .doubleborderleft { border-left: 2px solid #000; } .border .doubleborderright { border-right: 2px solid #000; }</style>
 </blank>

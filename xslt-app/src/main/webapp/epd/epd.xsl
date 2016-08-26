@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE xsl:stylesheet [<!ENTITY nbsp "&#160;">]>
 
-<xsl:stylesheet
-        xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:stylesheet xmlns:fmt="http://xml.apache.org/xalan/java/tk.xsl.Format"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
-    <xsl:import href="/xsl/blank.xsl"/>
+    <xsl:output method="html" version="4.0" encoding="UTF-8" indent="yes" />
+
+    <!--<xsl:import href="/xsl/blank.xsl"/>-->
 
     <xsl:template match="/blank">
         <style>
@@ -122,9 +125,13 @@
                     передаточный документ
                 </td>
                 <td style="width:11.2%">Счёт-фактура №</td>
-                <td colspan="2" class="ctrbtm">1</td>
+                <td colspan="2" class="ctrbtm">
+                    <xsl:value-of select="number"/>
+                </td>
                 <td style="width:4%; text-align:center">от</td>
-                <td style="width:12.3%" class="ctrbtm">2.2.2</td>
+                <td style="width:12.3%" class="ctrbtm">
+                    <xsl:value-of select="fmt:date(@date)"/>
+                </td>
                 <td style="width:28.2%">(1)</td>
                 <td rowspan="2" colspan="2" style="text-align:right; font-size:9px;">Приложение №1<br/>к постановлению
                     Правительства Российской Федерации<br/>от 26 декабря 2011 г. №1137
@@ -132,14 +139,16 @@
             </tr>
             <tr>
                 <td class="nrm">Исправление №</td>
-                <td colspan="2" class="ctrbtm">-</td>
+                <td colspan="2" class="ctrbtm">-</td> <!--?-->
                 <td style="text-align:center">от</td>
                 <td class="ctrbtm">-</td>
                 <td>(1a)</td>
             </tr>
             <tr>
                 <td colspan="2" style="font-weight:bold">Продавец:</td>
-                <td colspan="5" class="brdrbtm">ООО Конфетпром</td>
+                <td colspan="5" class="brdrbtm">
+                    <xsl:value-of select="sender/legalTitle"/>
+                </td>
                 <td>(2)</td>
             </tr>
             <tr>
@@ -147,13 +156,19 @@
                 <td class="brdr" style="padding-right:3px; padding-left:3px;">1</td>
                 <td class="nrmplrgh"/>
                 <td colspan="2">Адрес:</td>
-                <td colspan="5" class="brdrbtm">Москва</td>
+                <td colspan="5" class="brdrbtm">
+                    <xsl:value-of select="sender/legalAddress"/>
+                </td>
                 <td>(2a)</td>
             </tr>
             <tr>
                 <td colspan="3" class="nrmplrgh"/>
                 <td colspan="2">ИНН/КПП продавца:</td>
-                <td colspan="5" class="brdrbtm">76809675798658</td>
+                <td colspan="5" class="brdrbtm">
+                    <xsl:value-of select="sender/inn"/>
+                    <xsl:text>/</xsl:text>
+                    <xsl:value-of select="sender/kpp"/>
+                </td>
                 <td>(2б)</td>
             </tr>
             <tr>
@@ -161,12 +176,20 @@
                     (акт)<br/>2-передаточный документ (акт)
                 </td>
                 <td colspan="2">Грузоотправитель и его адрес:</td>
-                <td colspan="5" class="brdrbtm">он же</td>
+                <td colspan="5" class="brdrbtm">
+                    <xsl:value-of select="sender/legalTitle"/>
+                    <xsl:text>, </xsl:text>
+                    <xsl:value-of select="sender/legalAddress"/>
+                </td>
                 <td>(3)</td>
             </tr>
             <tr>
                 <td colspan="2">Грузополучатель и его адрес:</td>
-                <td colspan="5" class="brdrbtm">Алхимов, москва</td>
+                <td colspan="5" class="brdrbtm">
+                    <xsl:value-of select="recipier/legalTitle"/>
+                    <xsl:text>, </xsl:text>
+                    <xsl:value-of select="recipier/legalAddress"/>
+                </td>
                 <td>(4)</td>
             </tr>
             <tr>
@@ -176,22 +199,34 @@
             </tr>
             <tr>
                 <td colspan="2" style="font-weight:bold">Покупатель:</td>
-                <td colspan="5" class="brdrbtm">Алхимов</td>
+                <td colspan="5" class="brdrbtm">
+                    <xsl:value-of select="recipier/legalTitle"/>
+                </td>
                 <td>(6)</td>
             </tr>
             <tr>
                 <td colspan="2">Адрес:</td>
-                <td colspan="5" class="brdrbtm">Москва</td>
+                <td colspan="5" class="brdrbtm">
+                    <xsl:value-of select="recipier/legalAddress"/>
+                </td>
                 <td>(6a)</td>
             </tr>
             <tr>
                 <td colspan="2">ИНН/КПП покупателя:</td>
-                <td colspan="5" class="brdrbtm">76809675798658</td>
+                <td colspan="5" class="brdrbtm">
+                    <xsl:value-of select="recipier/inn"/>
+                    <xsl:text>/</xsl:text>
+                    <xsl:value-of select="recipier/kpp"/>
+                </td>
                 <td>(6б)</td>
             </tr>
             <tr>
                 <td colspan="2">Валюта: наименование, код</td>
-                <td colspan="5" class="brdrbtm">рубль, 633</td>
+                <td colspan="5" class="brdrbtm">
+                    <xsl:value-of select="currency/@legalTitle"/>
+                    <xsl:text>, </xsl:text>
+                    <xsl:value-of select="currency/@code"/>
+                </td>
                 <td>(7)</td>
             </tr>
         </table>
@@ -238,30 +273,59 @@
                 <td class="nrmtbl">10a</td>
                 <td class="nrmtbl">11</td>
             </tr>
-            <tr>
-                <td class="nrmtblr">1</td>
-                <td class="nrmtbll" style="border-right-width:2px;"/>
-                <td class="nrmtbll">Ящик</td>
-                <td class="nrmtbll">796</td>
-                <td class="nrmtbll">шт</td>
-                <td class="nrmtblr" colspan="2">1000</td>
-                <td class="nrmtblr">1800</td>
-                <td class="nrmtblr">1800</td>
-                <td class="nrmtbll" colspan="2">без акциза</td>
-                <td class="nrmtbll">18%</td>
-                <td class="nrmtblr" colspan="2">324</td>
-                <td class="nrmtblr">2124</td>
-                <td class="nrmtbll" colspan="2">100</td>
-                <td class="nrmtbll">Болгария</td>
-                <td class="nrmtbll">1234567876567898765</td>
-            </tr>
+            <xsl:for-each select="item">
+                <tr>
+                    <td class="nrmtblr">
+                        <xsl:value-of select="position()"/>
+                    </td>
+                    <td class="nrmtbll" style="border-right-width:2px;">
+                    </td>
+                    <td class="nrmtbll">
+                        <xsl:value-of select="@text"/>
+                    </td>
+                    <td class="nrmtbll">
+                        <xsl:value-of select="unit/@code"/>
+                    </td>
+                    <td class="nrmtbll">
+                        <xsl:value-of select="unit/@title"/>
+                    </td>
+                    <td class="nrmtblr" colspan="2">
+                        <xsl:value-of select="@count"/>
+                    </td>
+                    <td class="nrmtblr">
+                        <xsl:value-of select="fmt: money(@price)"/>
+                    </td>
+                    <td class="nrmtblr">
+                        <xsl:value-of select="fmt: money(@cost - @costTax)"/>
+                    </td>
+                    <td class="nrmtbll" colspan="2"></td>
+                    <td class="nrmtbll">
+                        <xsl:value-of select="@taxPercent"/>
+                    </td>
+                    <td class="nrmtblr" colspan="2">
+                        <xsl:value-of select="fmt: money(@costTax)"/>
+                    </td>
+                    <td class="nrmtblr">
+                        <xsl:value-of select="fmt: money(@cost)"/>
+                    </td>
+                    <td class="nrmtbll" colspan="2"></td>
+                    <td class="nrmtbll"></td>
+                    <td class="nrmtbll"></td>
+                </tr>
+            </xsl:for-each>
             <tr>
                 <td class="nrmtbll" colspan="2" style="border-right-width:2px;"/>
                 <td class="nrmtbll" colspan="6" style="font-weight:bold">Всего к оплате</td>
-                <td class="nrmtblr">2300</td>
+                <td class="nrmtblr">
+                    <xsl:value-of select="fmt: money(summary/@sum - summary/@taxSum)"/>
+                </td>
                 <td class="nrmtbl" colspan="3">X</td>
-                <td class="nrmtblr" colspan="2">324</td>
-                <td class="nrmtblr">2624</td>
+                <td class="nrmtblr" colspan="2">
+                    <xsl:value-of select="fmt: money(summary/@taxSum)"/>
+                </td>
+                <td class="nrmtblr">
+                    <xsl:value-of select="fmt: money(summary/@sum)"/>
+                </td>
                 <td class="nrmtbll" colspan="4"/>
             </tr>
             <tr>
@@ -272,11 +336,15 @@
                 <td>Руководитель организации или иное уполномоченное лицо</td>
                 <td colspan="3" class="brdrbtm"/>
                 <td/>
-                <td colspan="2" class="brdrbtm">Семенов</td>
+                <td colspan="2" class="brdrbtm">
+                    <xsl:value-of select="document/recipier/director"/>
+                </td>
                 <td colspan="5">Главный бухгалтер или иное уполномоченное лицо</td>
                 <td colspan="2" class="brdrbtm"/>
                 <td/>
-                <td colspan="2" class="brdrbtm"/>
+                <td colspan="2" class="brdrbtm">
+                    <xsl:value-of select="document/recipier/accounter"/>
+                </td>
             </tr>
             <tr>
                 <td/>
@@ -310,7 +378,7 @@
         <table name="table3" class="nrm" width="100%">
             <tr>
                 <td colspan="4">Основание передачи(сдачи)/получения(приемки)</td>
-                <td colspan="10" class="brdrbtm" style="text-align:left">345</td>
+                <td colspan="10" class="brdrbtm" style="text-align:left"></td>
                 <td width="20">[8]</td>
             </tr>
             <tr>
@@ -369,12 +437,12 @@
             </tr>
             <tr>
                 <td colspan="3">Дата отгрузки, передачи(сдачи)</td>
-                <td colspan="2" class="brdrbtm">2dec2013</td>
+                <td colspan="2" class="brdrbtm"></td>
                 <td colspan="2"/>
                 <td>[11]</td>
                 <td style="border-color:black; border-width: 0px; border-style: solid; border-left-width:2px;"/>
                 <td colspan="2">Дата получения(приемки)</td>
-                <td class="brdrbtm">" " 20 года</td>
+                <td class="brdrbtm"></td>
                 <td colspan="2"/>
                 <td>[16]</td>
             </tr>
@@ -441,11 +509,23 @@
                 <td/>
             </tr>
             <tr>
-                <td colspan="7" class="brdrbtm" height="30">Конфетпром</td>
+                <td colspan="7" class="brdrbtm" height="30">
+                    <xsl:value-of select="sender/legalTitle"/>
+                    <xsl:text>, ИНН/КПП </xsl:text>
+                    <xsl:value-of select="sender/inn"/>
+                    <xsl:text>/</xsl:text>
+                    <xsl:value-of select="sender/kpp"/>
+                </td>
                 <td>[14]</td>
                 <td width="5px"
                     style="border-color:black; border-width: 0px; border-style: solid; border-left-width:2px;"/>
-                <td colspan="5" class="brdrbtm">Алхимов</td>
+                <td colspan="5" class="brdrbtm">
+                    <xsl:value-of select="recipier/legalTitle"/>
+                    <xsl:text>, ИНН/КПП </xsl:text>
+                    <xsl:value-of select="recipier/inn"/>
+                    <xsl:text>/</xsl:text>
+                    <xsl:value-of select="recipier/kpp"/>
+                </td>
                 <td>[19]</td>
             </tr>
             <tr>
