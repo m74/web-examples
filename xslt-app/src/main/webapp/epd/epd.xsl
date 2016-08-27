@@ -4,107 +4,21 @@
 <xsl:stylesheet xmlns:fmt="http://xml.apache.org/xalan/java/tk.xsl.Format"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
-    <xsl:output method="html" version="4.0" encoding="UTF-8" indent="yes" />
-
-    <!--<xsl:import href="/xsl/blank.xsl"/>-->
+    <xsl:import href="/xsl/blank.xsl"/>
 
     <xsl:template match="/blank">
         <style>
-            div.h1{
-            font-size:12px;
-            font-weight:normal;
-            margin-top:30px;
-            margin-left:650px;
-            }
-            .h2{
-            font-size:12px;
-            font-weight:normal;
-            width:130px;
-            border-style:solid;
-            border-width:1px;
-            border-color:black;
-            position:absolute;
-            left:851px;
-            text-align:center;
-            top:75px;
-            }
-            .nrmplrgh{
-            border-color:black;
-            border-width: 2px;
-            border-style: solid;
-            border-top: 0px;
-            border-bottom: 0px;
-            border-left: 0px;
-            text-align:left;
-            vertical-align: top;
-            }
-            .nrm{
-            font-size:12px;
-            font-weight:normal;
-            border-collapse: collapse;
-            }
-            .ctrbtm{
-            border-color:black;
-            border-width: 1px;
-            border-style: solid;
-            border-top: 0px;
-            border-right: 0px;
-            border-left: 0px;
-            text-align:center;
-            }
-            .brdrbtm{
-            border-color:black;
-            border-width: 1px;
-            border-style: solid;
-            border-top: 0px;
-            border-right: 0px;
-            border-left: 0px;
-            vertical-align: bottom;
-            }
-            .brdr{
-            border-color:black;
-            border-width: 2px;
-            border-style: solid;
-            width: 10;
-            text-align:center;
-            }
-            .nrmtbl{
-            border-color:black;
-            border-width: 1px;
-            border-style: solid;
-            text-align: center;
-            padding-top: 2px;
-            padding-left: 2px;
-            padding-right: 2px;
-            padding-bottom: 2px;
-            }
-            .nrmtblr{
-            border-color:black;
-            border-width: 1px;
-            border-style: solid;
-            text-align: right;
-            padding-top: 2px;
-            padding-left: 2px;
-            padding-right: 2px;
-            padding-bottom: 2px;
-            vertical-align: top;
-            }
-            .nrmtbll{
-            border-color:black;
-            border-width: 1px;
-            border-style: solid;
-            text-align: left;
-            padding-top: 2px;
-            padding-left: 2px;
-            padding-right: 2px;
-            padding-bottom: 2px;
-            vertical-align: top;
-            }
-            .undtext{
-            vertical-align: top;
-            text-align: center;
-            font-size: 9px;
-            }
+            div.h1{font-size:12px;font-weight:normal;margin-top:30px;margin-left:650px;}
+            .h2{font-size:12px;font-weight:normal;width:130px;border-style:solid;border-width:1px;border-color:black;position:absolute;left:851px;text-align:center;top:75px;}
+            .nrmplrgh{border-color:black;border-width:2px;border-style:solid;border-top:0px;border-bottom:0px;border-left:0px;text-align:left;vertical-align:top;}
+            .nrm{font-size:12px;font-weight:normal;border-collapse: collapse;}
+            .ctrbtm{border-color:black;border-width:1px;border-style:solid;border-top:0px;border-right:0px;border-left:0px;text-align:center;}
+            .brdrbtm{border-color:black;border-width:1px;border-style:solid;border-top:0px;border-right:0px;border-left:0px;vertical-align:bottom;}
+            .brdr{border-color:black;border-width: 2px;border-style: solid;width: 10;text-align:center;}
+            .nrmtbl{border-color:black;border-width:1px;border-style:solid;text-align:center;padding-top:2px;padding-left:2px;padding-right:2px;padding-bottom:2px;}
+            .nrmtblr{border-color:black;border-width:1px;border-style:solid;text-align:right;padding-top:2px;padding-left:2px;padding-right:2px;padding-bottom:2px;vertical-align:top;}
+            .nrmtbll{border-color:black;border-width:1px;border-style:solid;text-align:left;padding-top:2px;padding-left:2px;padding-right:2px;padding-bottom:2px;vertical-align:top;}
+            .undtext{vertical-align: top;text-align: center;font-size: 9px;}
         </style>
         <table class="nrm" name="table1">
             <tr>
